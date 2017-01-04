@@ -151,6 +151,7 @@ hr.small {
 /* Header */
 
 .header {
+    padding-top: -1000px;
     display: table;
     position: relative;
     width: 100%;
@@ -160,6 +161,10 @@ hr.small {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+.head-text {
+    color: #e7e7e7;
 }
 
 /* About */
