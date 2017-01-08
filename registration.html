@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+	<title>CodePSU Registration</title>
+
+	<link rel='stylesheet' href='css/form-validation.css'>
+</head>
+<body>
+    <div class='main-content'>
+        <!-- You only need this form and the form-validation.css -->
+
+        <form enctype='multipart/form-data' name='registration' id='registration' class='form-validation' method='post' data-rel="back">
+
+            <div class='form-title-row'>
+                <h1>CodePSU Registration</h1>
+            </div>
+
+            <div>
+                <h3>Rules and Regulations</h3>
+                <ul>
+                    <li>Teams are created based on skill level: Beginner, Intermediate, Advanced</li>
+                    <li>Beginner: Not taken any CS courses</li>
+                    <li>Intermediate: Taken 200-level and below CS courses</li>
+                    <li>Advanced: Taken 300-level and up CS courses</li>
+                    <li>Please note that CMPSC 360 and CMPSC 200 will not count as a qualifier for Advanced and Intermediate Tiers respectively.</li>
+                    <li>Teams may consist of 1-3 people of any skill level. A team's skill level will determined by the highest skill level of a member in the team.</li>
+                    <li>You may choose to compete up but may not compete down a tier.</li>
+                </ul>        
+            </div>
+            <br />
+            <div class='subheader'>
+                Personal Details
+                <br /> <br /><br />
+            </div>
+
+            <div class='form-row form-input-name-row'>
+
+                <label>
+                    <span>Full name</span>
+                    <input type='text' name='name'>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='form-row form-input-email-row'>
+
+                <label>
+                    <span>Email</span>
+                    <input type='text' name='email'>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='form-row form-input-linkedin-row'>
+
+                <label>
+                    <span>LinkedIn</span>
+                    <input type='text' name='linkedin'>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='form-row form-input-github-row'>
+
+                <label>
+                    <span>Github</span>
+                    <input type='text' name='github'>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='form-row form-input-resume-row'>
+
+                <label>
+                    <span>Resume (.pdf)</span>
+                    <input type='file' name='file' id="file_up">
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='form-row form-input-allergies-row'>
+
+                <label>
+                    <span>Any Food Allergies</span>
+                    <input type='text' name='allergies'>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='subheader'>
+                <br /> <br /><br />
+                Competition Information
+                <br /> <br /><br />
+            </div>
+
+            <div class='form-row form-input-highest-cs-row'>
+
+                <label>
+                    <span>Highest CS Course Taken</span>
+                    <select name='highest_cs_course'>
+                        <option>Select one</option>
+                        <option>None</option>
+                        <option>100-level</option>
+                        <option>200-level</option>
+                        <option>300-level</option>
+                        <option>400-level</option>
+                    </select>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='form-row form-input-tier-row'>
+
+                <label>
+                    <span>Desired Tier</span>
+                    <select name='tier'>
+                        <option>Select one</option>
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                    </select>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='subheader'>
+                <br /> <br /><br />
+                Team Information
+                <br /> <br /><br />
+            </div>
+
+            <div class='form-row form-input-team-or-match-row'>
+
+                <label>
+                    <span>Team Status</span>
+                    <select name='team_or_match'>
+                        <option>Select one</option>
+                        <option>I WOULD like to compete INDEPENDENTLY</option>
+                        <option>I HAVE a team ready</option>
+                        <option>I DO NOT have a team ready and WOULD like to be matched</option>
+                    </select>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='form-row form-input-team-name-row'>
+
+                <label>
+                    <span>Team Name</span>
+                    <input type='text' name='team_name'>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-data-info'></span>
+
+            </div>
+
+            <div class='subheader'>
+                <br />
+                Teammate 1 Information (Only if you have a team)
+                <br /> <br /><br />
+            </div>
+
+            <div class='form-row form-input-teammate-1-name-row'>
+
+                <label>
+                    <span>Teammate 1 Name</span>
+                    <input type='text' name='teammate_1_name'>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='form-row form-input-teammate-1-email-row'>
+
+                <label>
+                    <span>Teammate 1 Email</span>
+                    <input type='text' name='teammate_1_email'>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='subheader'>
+                <br />
+                Teammate 2 Information (Only if you have a team)
+                <br /> <br /><br />
+            </div>
+
+            <div class='form-row form-input-teammate-2-name-row'>
+
+                <label>
+                    <span>Teammate 2 Name</span>
+                    <input type='text' name='teammate_2_name'>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='form-row form-input-teammate-2-email-row'>
+
+                <label>
+                    <span>Teammate 2 Email</span>
+                    <input type='text' name='teammate_2_email'>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
+            <div class='subheader'>
+                <br /><br />
+                Sponsor Information Consent for Job/Internship Opportunities
+                <br /> <br /><br /> <br />
+            </div>
+
+            <div class='form-row form-input-share-info-row'>
+
+                <label>
+                    <span>Share Information</span>
+                     <select name='can_share_info'>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-data-info'></span>
+
+            </div>
+           
+            <div class='form-row'>
+                <button type='submit'>Register</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+<script>
+    $.fn.serializeObject = function()
+    {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
+    function submitForm() {
+
+        var auth_token = 'YOUR AUTH TOKEN';
+        var form = document.forms.namedItem('registration');
+        var formData = new FormData(form);
+        var req = new XMLHttpRequest();
+        req.open('POST', 'http://api.codepsu.com/register', true)
+        req.setRequestHeader('Auth-Token', auth_token);
+        req.onload = function(oEvent) {
+            alert("Successfully Registered for CodePSU!");
+            window.location.href = "http://www.codepsu.com";
+        };
+        req.send(formData);
+
+        return false;
+    }
+
+    function validateForm() {
+        let data = $('#registration').serializeObject();
+
+        let file = document.getElementById('file_up').files;
+        let validated = true;
+
+        let nameField = $('.form-input-name-row');
+        let emailField = $('.form-input-email-row');
+        let linkedinField = $('.form-input-lnikedin-row');
+        let githubField = $('.form-input-github-row');
+        let resumeField = $('.form-input-resume-row');
+        let allergiesField = $('.form-input-allergies-row');
+        let csField = $('.form-input-highest-cs-row');
+        let tierField = $('.form-input-tier-row');
+        let teamStatusField = $('.form-input-team-or-match-row');
+        let teamNameField = $('.form-input-team-name-row');
+        let teammate1NameField = $('.form-input-teammate-1-name-row');
+        let teammate1EmailField = $('.form-input-teammate-1-email-row');
+        let teammate2NameField = $('.form-input-teammate-2-name-row');
+        let teammate2EmailField = $('.form-input-teammate-2-email-row');
+
+        if (data.name === '' || data.name.split(' ').length < 2) {
+            nameField.addClass('form-invalid-data');
+            nameField.find('.form-invalid-data-info').text('Please enter your full name');
+            validated = false;
+        } else {
+            nameField.removeClass('form-invalid-data');
+            nameField.addClass('form-valid-data');
+        }
+
+        if (data.email === '' || data.email.indexOf('@psu.edu') === -1) {
+            emailField.addClass('form-invalid-data');
+            emailField.find('.form-invalid-data-info').text('Please enter a valid PSU email (xyj1234@psu.edu)');
+            validated = false;
+        } else {
+            emailField.removeClass('form-invalid-data');
+            emailField.addClass('form-valid-data');
+        }
+
+        if (data.linkedin !== '') {
+            linkedinField.removeClass('form-invalid-data');
+            linkedinField.addClass('form-valid-data');
+        } else {
+            linkedinField.removeClass('form-invalid-data');
+            linkedinField.removeClass('form-valid-data');
+        }
+
+        if (data.github !== '') {
+            githubField.removeClass('form-invalid-data');
+            githubField.addClass('form-valid-data');
+        } else {
+            githubField.removeClass('form-invalid-data');
+            githubField.removeClass('form-valid-data');
+        }
+
+        if(file.length === 0) {
+            resumeField.addClass('form-invalid-data');
+            resumeField.find('.form-invalid-data-info').text('Please upload a file (PDF)');
+            validated = false; 
+        } else if(file[0].name.indexOf('.pdf') == -1) {
+            resumeField.addClass('form-invalid-data');
+            resumeField.find('.form-invalid-data-info').text('Please make sure file is PDF format');
+            validated = false; 
+        } else {
+            resumeField.removeClass('form-invalid-data');
+            resumeField.addClass('form-valid-data');
+        }
+
+        if (data.allergies !== '') {
+            allergiesField.removeClass('form-invalid-data');
+            allergiesField.addClass('form-valid-data');
+        } else {
+            allergiesField.removeClass('form-invalid-data');
+            allergiesField.removeClass('form-valid-data');
+        }
+        
+        if (data.highest_cs_course === 'Select one') {
+            csField.addClass('form-invalid-data');
+            csField.find('.form-invalid-data-info').text('Please choose your highest CS course');
+            validated = false;
+        } else {
+            csField.removeClass('form-invalid-data');
+            csField.addClass('form-valid-data');
+        }
+
+        if (data.tier === 'Select one') {
+            tierField.addClass('form-invalid-data');
+            tierField.find('.form-invalid-data-info').text('Please choose your desired tier to compete in');
+            validated = false;
+        } else {
+            tierField.removeClass('form-invalid-data');
+            tierField.addClass('form-valid-data');
+        }
+
+        if (data.team_or_match === 'Select one') {
+            teamStatusField.addClass('form-invalid-data');
+            teamStatusField.find('.form-invalid-data-info').text('Please choose your team status');
+            validated = false;
+        } else {
+            teamStatusField.removeClass('form-invalid-data');
+            teamStatusField.addClass('form-valid-data');
+        }
+
+        if (data.team_name === '') {
+            teamNameField.addClass('form-invalid-data');
+            teamNameField.find('.form-invalid-data-info').text('Please enter your team name');
+            validated = false;
+        } else {
+            teamNameField.removeClass('form-invalid-data');
+            teamNameField.addClass('form-valid-data');
+        }
+
+        if(data.teammate_1_name !== '' && data.teammate_1_email === '') {
+            teammate1EmailField.addClass('form-invalid-data');
+            teammate1EmailField.find('.form-invalid-data-info').text('Please enter teammate email');
+            validated = false;
+        }
+
+        if(data.teammate_1_name === '' && data.teammate_1_email !== '') {
+            teammate1NameField.addClass('form-invalid-data');
+            teammate1NameField.find('.form-invalid-data-info').text('Please enter teammate name');
+            validated = false;
+        }
+
+        if(data.teammate_1_name === '' && data.teammate_1_email === '') {
+            teammate1NameField.removeClass('form-invalid-data');
+            teammate1EmailField.removeClass('form-invalid-data');
+        }
+
+        if(data.teammate_1_name !== '' && data.teammate_1_email !== '') {
+            teammate1NameField.removeClass('form-invalid-data');
+            teammate1EmailField.removeClass('form-invalid-data');
+            teammate1NameField.addClass('form-valid-data');
+            teammate1EmailField.addClass('form-valid-data');
+        }
+
+        if(data.teammate_2_name !== '' && data.teammate_2_email === '') {
+            teammate2EmailField.addClass('form-invalid-data');
+            teammate2EmailField.find('.form-invalid-data-info').text('Please enter teammate email');
+            validated = false;
+        }
+
+        if(data.teammate_2_name === '' && data.teammate_2_email !== '') {
+            teammate2NameField.addClass('form-invalid-data');
+            teammate2NameField.find('.form-invalid-data-info').text('Please enter teammate name');
+            validated = false;
+        }
+
+        if(data.teammate_2_name === '' && data.teammate_2_email === '') {
+            teammate2NameField.removeClass('form-invalid-data');
+            teammate2EmailField.removeClass('form-invalid-data');
+        }
+
+        if(data.teammate_2_name !== '' && data.teammate_2_email !== '') {
+            teammate2NameField.removeClass('form-invalid-data');
+            teammate2EmailField.removeClass('form-invalid-data');
+            teammate2NameField.addClass('form-valid-data');
+            teammate2EmailField.addClass('form-valid-data');
+        }
+
+        return validated;
+    }
+    
+    $('.form-validation').on('submit', function () {
+        if (validateForm()) {
+            console.log("here");
+            submitForm();
+        } else {
+            $('body').scrollTop(0);
+            return false;
+        }
+    
+        return false;
+    });
+    
+    $(document).ready(function() {
+        //Permission
+        var permissionField = $('.form-input-share-info-row');
+        permissionField.addClass('form-add-info');
+        permissionField.find('.form-data-info').text('Can we share your information with CodePSU sponsors to be considered for internships and full time job opportunities?');
+
+        //Permission
+        var teamNameField = $('.form-input-team-name-row');
+        teamNameField.addClass('form-add-info');
+        teamNameField.find('.form-data-info').text('If you have a team ready, EACH team member MUST enter the SAME team name. Otherwiese, enter any team name you\'d like!');
+    });
+
+</script>
+
+</body>
+
+</html>
