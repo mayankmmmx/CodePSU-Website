@@ -22,6 +22,7 @@
             </div>
 
             <div>
+                <h3>MAKE SURE EVERY TEAM MEMBER FILLS OUT REGISTRATION!</h3>
                 <h3>Rules and Regulations</h3>
                 <ul>
                     <li>Teams are created based on skill level: Beginner, Intermediate, Advanced</li>
@@ -455,9 +456,14 @@
             validated = false;
         }
 
-        if(data.teammate_1_name === '' && data.teammate_1_email === '') {
+        if(data.team_or_match !== 'I HAVE a team ready' && data.teammate_1_name === '' && data.teammate_1_email === '') {
             teammate1NameField.removeClass('form-invalid-data');
             teammate1EmailField.removeClass('form-invalid-data');
+        } else {
+            teammate1NameField.addClass('form-invalid-data');
+            teammate1EmailField.addClass('form-invalid-data');
+            teammate1NameField.find('.form-invalid-data-info').text('Please enter teammate name');
+            teammate1EmailField.find('.form-invalid-data-info').text('Please enter teammate email');
         }
 
         if(data.teammate_1_name !== '' && data.teammate_1_email !== '') {
@@ -496,7 +502,6 @@
     
     $('.form-validation').on('submit', function () {
         if (validateForm()) {
-            console.log("here");
             submitForm();
         } else {
             $('body').scrollTop(0);
