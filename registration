@@ -120,6 +120,25 @@
 
             </div>
 
+            <div class='form-row form-input-shirt-row'>
+
+                <label>
+                    <span>T-Shirt Size*</span>
+                    <select name='shirt'>
+                        <option>Select one</option>
+                        <option>Small</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                        <option>Extra Large</option>
+                    </select>
+                </label>
+
+                <span class='form-valid-data-sign'><i class='fa fa-check'></i></span>
+                <span class='form-invalid-data-sign'><i class='fa fa-close'></i></span>
+                <span class='form-invalid-data-info'></span>
+
+            </div>
+
             <div class='subheader'>
                 <br /> <br /><br />
                 Competition Information
@@ -317,7 +336,7 @@
 
     function submitForm() {
 
-        var auth_token = 'YOUR AUTH TOKEN';
+        var auth_token = 'BfE9xo0KmofWvdv703oiD2iI7162Hmby';
         var form = document.forms.namedItem('registration');
         var formData = new FormData(form);
         var req = new XMLHttpRequest();
@@ -340,6 +359,7 @@
 
         let nameField = $('.form-input-name-row');
         let emailField = $('.form-input-email-row');
+        let shirtField = $('form-input-shirt-row');
         let linkedinField = $('.form-input-lnikedin-row');
         let githubField = $('.form-input-github-row');
         let resumeField = $('.form-input-resume-row');
@@ -371,6 +391,15 @@
             emailField.addClass('form-valid-data');
         }
 
+        if (data.shirt === 'Select one') {
+            shirtField.addClass('form-invalid-data');
+            shirtField.find('.form-invalid-data-info').text('Please select a valid shirt size');
+            validated = false;
+        } else {
+            shirtField.removeClass('form-invalid-data');
+            shirtField.addClass('form-valid-data');
+        }
+
         if (data.linkedin !== '') {
             linkedinField.removeClass('form-invalid-data');
             linkedinField.addClass('form-valid-data');
@@ -391,9 +420,9 @@
             resumeField.addClass('form-invalid-data');
             resumeField.find('.form-invalid-data-info').text('Please upload a file (PDF)');
             validated = false; 
-        } else if(file[0].name.indexOf('.pdf') == -1) {
+        } else if(file[0].name.indexOf('.pdf') == -1 || file[0].name.toLowerCase().indexOf(data.name.split(' ')[0].toLowerCase()) == -1 || file[0].name.toLowerCase().indexOf(data.name.split(' ')[1].toLowerCase()) == -1) {
             resumeField.addClass('form-invalid-data');
-            resumeField.find('.form-invalid-data-info').text('Please make sure file is PDF format');
+            resumeField.find('.form-invalid-data-info').text('Please make sure file is PDF format and the file name is in the format: First-Last.pdf');
             validated = false; 
         } else {
             resumeField.removeClass('form-invalid-data');
